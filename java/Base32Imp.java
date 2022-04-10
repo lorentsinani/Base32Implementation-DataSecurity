@@ -104,4 +104,29 @@ public class base32Imp {
         }
         return bytes;
     }
-
+/**
+     * For testing, take a command-line argument in Base32, decode,
+     * print in hex, encode, print
+     *
+     * @param args
+     */
+    static public void main(String[] args) {
+        if (args.length == 0) {
+            System.out.println("Supply a Base32-encoded argument.");
+            return;
+        }
+        System.out.println(" Original: " + args[0]);
+        byte[] decoded = base32Imp.decode(args[0]);
+        System.out.print("      Hex: ");
+        for (int i = 0; i < decoded.length; i++) {
+            int b = decoded[i];
+            if (b < 0) {
+                b += 256;
+            }
+            System.out.print(
+                    (Integer.toHexString(b + 256)).substring(1));
+        }
+        System.out.println();
+        System.out.println("Reencoded: " + base32Imp.encode(decoded));
+    }
+}
