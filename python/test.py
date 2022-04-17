@@ -62,5 +62,5 @@ class NormalizeTests(unittest.TestCase):
         self.assertRaises(TypeError, b32.normalize, ["16J"])
 
 
-if _name_ == "_main_":
+if __name__ == "_main_":
     unittest.main()
