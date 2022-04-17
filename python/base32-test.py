@@ -16,15 +16,3 @@ plainTextDecoded_bytes = base64.b32decode(base32_bytes)
 plainTextDecoded = plainTextDecoded_bytes.decode("utf-8")
 
 print("Teksti i dekoduar: ", plainTextDecoded)
-
-// creating a new client socket and connection with server using same port as server 
-
-const client = new net.Socket(); 
-
-client.connect(58901, process.argv[2], () => { 
-
-console.log('Connected to server'); 
-
-console.log("If u want to get your access to write read or execute please type 'login' "); 
-
-});
